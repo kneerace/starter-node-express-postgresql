@@ -13,10 +13,10 @@ exports.up = function(knex) {
 		table.integer("supplier_id").unsigned().notNullable();
 		table
 			.foreign("supplier_id")
-			.references("supplier_id)
+			.references("supplier_id")
 			.inTable("suppliers")
 			.onDelete("cascade");
-		table.timeStamps(true, true);
+		table.timestamps(true, true);
 	});  
 };
 
