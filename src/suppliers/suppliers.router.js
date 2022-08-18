@@ -9,8 +9,8 @@ router.route("/")
 
 router
   .route("/:supplierId")
-  .put(controller.update)
-  .delete(controller.delete)
-  .all(methodNotAllowed);
+    .put(controller.update)
+      .delete(controller.delete)
+        .all(methodNotAllowed);
 
 module.exports = router;
