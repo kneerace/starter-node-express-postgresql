@@ -1,3 +1,11 @@
+const supplierService = require("./suppliers.service");
+
+function list(req, res, next){
+  return supplierService
+          .list()
+          .then((data)=> res.json({data}))
+          .catch(next);
+}
 async function create(req, res, next) {
   res.status(201).json({ data: { supplier_name: "new supplier" } });
 }
@@ -11,6 +19,7 @@ async function destroy(req, res, next) {
 }
 
 module.exports = {
+  list,
   create,
   update,
   delete: destroy,
