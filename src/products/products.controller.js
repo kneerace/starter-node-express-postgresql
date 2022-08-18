@@ -17,7 +17,7 @@ function productExists(req, res, next) {
       }
       next({
         status:404,
-        messsage: `Product cannot be found`
+        message: `Product cannot be found`
       })
     })
     .catch(next);
