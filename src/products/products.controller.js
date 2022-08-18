@@ -7,12 +7,30 @@ function list(req, res, next){
     .catch(next);
 }
 
-function read(req, res, next) {
-  res.json({ data: { product_title: "some product title" } });
+function productExists(req, res, next) {
+  productsService
+    .read(req.params.productId)
+    .then((product)=>{
+      if(product){
+        res.locals.product = product;
+        return next();
+      }
+      next({
+        status:404,
+        messsage: `Product cannot be found`
+      })
+    })
+    .catch(next);
 }
 
-
+function read(req, res){
+  const {product: data} = res.locals;
+  res.json({data});
+}
 module.exports = {
   list,
-  read, 
+  read:[
+    productExists,
+    read,
+  ], 
 };
