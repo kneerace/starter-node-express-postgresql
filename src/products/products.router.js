@@ -6,7 +6,11 @@ router.route("/")
     .get(controller.list)
         .all(methodNotAllowed);
 
-router.route("/:productId")
+// router.route("/:productId")
+//     .get(controller.read)
+//         .all(methodNotAllowed);
+
+router.route("/:productId([0-9]+)")
     .get(controller.read)
         .all(methodNotAllowed);
 
