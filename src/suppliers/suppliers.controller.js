@@ -60,8 +60,9 @@ function supplierExists(req, res, next){
 
 function update(req, res, next) {
   const updatedSupplier = {...req.body.data,
-      supplier_id: req.locals.supplier.supplier_id,
+      supplier_id: res.locals.supplier.supplier_id,
   };
+  // console.log("supplierController::updatedSupplier:::: ", updatedSupplier);
   supplierService
     .update(updatedSupplier)
     .then((data)=> res.json({data}))
@@ -83,6 +84,7 @@ module.exports = {
     supplierExists,
     hasOnlyValidProperties,
     hasRequiredProperties,
+    // console.log("now update"),
     update
   ],
   delete: [

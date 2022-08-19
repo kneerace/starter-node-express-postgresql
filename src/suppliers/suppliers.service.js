@@ -22,6 +22,7 @@ function read(supplier_id){
 }
 
 function update(updatedSupplier){
+    console.log("Update ::: HERE::::", updatedSupplier);
     return knex("suppliers")
         .select("*")
         .where({supplier_id: updatedSupplier.supplier_id})
