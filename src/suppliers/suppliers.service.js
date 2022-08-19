@@ -32,10 +32,16 @@ function update(updatedSupplier){
         );
 }
 
+function destroy(supplier_id){
+    return knex("suppliers")
+        .where({supplier_id})
+        .del();
+}
 
 module.exports = {
     list,
     create,
     read, 
     update, 
+    delete:destroy,
 }
