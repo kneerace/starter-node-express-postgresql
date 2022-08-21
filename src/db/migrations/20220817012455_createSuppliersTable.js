@@ -7,7 +7,6 @@ exports.up = function(knex) {
  		table.increments("supplier_id").primary();
 		table.string("supplier_name");
 		table.string("supplier_address_line_1");
-
 		table.string("supplier_address_line_2");
 		table.string("supplier_city");
 		table.string("supplier_state");

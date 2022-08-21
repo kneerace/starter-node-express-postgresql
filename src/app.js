@@ -3,12 +3,13 @@ const app = express();
 const productsRouter = require("./products/products.router");
 const categoriesRouter = require("./categories/categories.router");
 const suppliersRouter = require("./suppliers/suppliers.router");
-
+const restaurantsRouter = require("./restaurants/restaurants.router");
 app.use(express.json());
 
 app.use("/products", productsRouter);
 app.use("/categories", categoriesRouter);
 app.use("/suppliers", suppliersRouter);
+app.use("/restaurants", restaurantsRouter);
 
 // Not found handler
 app.use((req, res, next) => {
