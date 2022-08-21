@@ -1,7 +1,11 @@
 const knex = require("../db/connection");
 
+const tableName = "comments";
+
 function list() {
   // your solution here
+  return knex(tableName)
+        .select("*");
 }
 
 function listCommenterCount() {

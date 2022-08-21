@@ -4,12 +4,21 @@ const productsRouter = require("./products/products.router");
 const categoriesRouter = require("./categories/categories.router");
 const suppliersRouter = require("./suppliers/suppliers.router");
 const restaurantsRouter = require("./restaurants/restaurants.router");
+
+const commentsRouter = require("./comments/comments.router");
+const postsRouter = require("./posts/posts.router");
+const usersRouter = require("./users/users.router");
+
 app.use(express.json());
 
 app.use("/products", productsRouter);
 app.use("/categories", categoriesRouter);
 app.use("/suppliers", suppliersRouter);
 app.use("/restaurants", restaurantsRouter);
+
+app.use("/comments", commentsRouter);
+app.use("/posts", postsRouter);
+app.use("/users", usersRouter);
 
 // Not found handler
 app.use((req, res, next) => {

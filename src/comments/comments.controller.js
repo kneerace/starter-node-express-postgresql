@@ -13,7 +13,8 @@ async function commentExists(req, res, next) {
 
 async function list(req, res, next) {
   // your solution here
-  res.json({ data: "" });
+  const resData = await service.list();
+  res.json({ data: resData });
 }
 
 async function listCommenterCount(req, res, next) {
